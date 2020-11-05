@@ -1,4 +1,5 @@
 # Router-packet-simulator
+The python files are just the checker for the router that is written in C++.<br/>
 Used the Internet Protocol (IP) and the Ethernet/Industry Protocol (IP, I know, funny coincidence) to implement the ARP and ICMP protocols on a simulated router.<br/>
 The really nice part is the lookup time in the routing table that is very efficient. The lookup time is asymptotically O(1) by using the following data structure: a vector of 32 elements, and those elements are hash-tables.<br/>
 Explanation:<br/>
