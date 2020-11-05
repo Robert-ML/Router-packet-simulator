@@ -1,0 +1,19 @@
+Copyright Robert Lica <robertlica21@gimail.com>
+
+Am facut tabela de rutare, partajarea de pachete si icmp TTL expiered si
+destination unreachable. Cel putin am intentionat partea cu icmp, nu imi
+merge checker-ul pe local.
+
+Tabela de rutare este un vector cu 32 de casute (pentru ca atatea masti pot
+exista) si in vector se afla un hash map <prefix, linie din tabela de rutare>.
+Asa am obtinut o accesare in O(1). Zic ca se intelege din cod, am incercat sa
+folosesc cat mai mult stl. (stiu ca nu era nevoie sa tin minte toata linia din
+tabela de rutare ca puteam afla pe parcurs, dar eh, mi-am dat seama prea tarziu
+ca irosesc cel putin 8 bytes pentru fiecare linie din tabela de rutare)
+
+Motivul pentru acre am vrut sa fac in C++ a fost in parte pentru a ma obisnuii
+cu unordered map-ul.
+
+Functia "not_mine_ip_checksum" este luata din laborator pentru checksum.
+
+Nu cred ca mai trebuie sa acopar ceva, restul se cam inteleeg de la sine.
